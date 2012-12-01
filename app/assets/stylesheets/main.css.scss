@@ -43,7 +43,8 @@ form select {
 }
 
 
-form input[type='submit'], #user_create_button, #back, #user_cancel_button, #user_refresh_button {
+
+form input[type='submit'], form div button, #user_create_button {
   -webkit-appearance: caret;
   font-size: 14px;
   font-size: 13px;
@@ -63,6 +64,7 @@ form input[type='submit'], #user_create_button, #back, #user_cancel_button, #use
   text-align: middle;
   vertical-align: top;
 }
+
 
 #destroy {
   -webkit-appearance: caret;

@@ -47,10 +47,8 @@
 
 <div class="paging-buttons">
     <input type="submit" value="Create">
-    <button id=user_cancel_button>Cancel</button>
-    <button id=user_refresh_button>Refresh</button>
+    <button>Cancel</button>
+    <button>Refresh</button>
 </div>
 
 </form>
-
-<button id="back">Back</button>

@@ -5,7 +5,6 @@ class Shop.Views.UsersEdit extends Backbone.View
   el: '#app'
 
   events:
-    'click #back': 'returnOnMain'
     'submit #edit_user': 'editUser'
 
   initialize: ->
