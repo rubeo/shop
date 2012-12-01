@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require jquery.validate.js
 //= require shop
 //= require_tree ../templates
 //= require_tree ./models

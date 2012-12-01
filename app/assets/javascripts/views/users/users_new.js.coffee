@@ -13,6 +13,67 @@ class Shop.Views.UsersNew extends Backbone.View
 
   render: ->
    @$el.html(@template())
+   
+   jQuery.validator.addMethod "noSpace", ((value, element) ->
+     value.indexOf(" ")<0
+   ), "Field cannot contain spaces"
+   
+   jQuery.validator.addMethod "noNumbers", ((value, element) ->
+     not /\d/.test(value)
+   ), "cannot contain numbers"  
+
+   @$('form').validate
+     rules:
+       login_name: 
+         required: true
+         maxlength: 20
+         noSpace: true 
+
+       first_name: 
+         required: true
+         maxlength: 50
+         noNumbers: true
+
+       last_name: 
+         required: true
+         maxlength: 50
+         noNumbers: true
+
+       password:
+         required: true
+         minlength: 4
+         maxlength: 10
+         noSpace: true
+
+       confirm_password:
+         required: true
+         equalTo: "#new_password"
+
+       email:
+         required: true
+         email: true
+
+     messages:
+       login_name: 
+         required: "Login name cannot be blank!"
+         maxlength: "Login name is too long"
+         noSpace: "Login name cannot contain spaces"
+       first_name: 
+         required: "First name cannot be blank!"
+         maxlength: "First name is too long"
+         noNumbers: "First name cannot contain numbers"
+       last_name: 
+         required: "Last name cannot be blank!"
+         maxlength: "Last name is too long"
+         noNumbers: "Last name cannot contain numbers"
+       password:
+         required: "Password cannot be blank!"
+         minlength: "Password field cannot be shorter than 4 characters"
+         maxlength: "Password field cannot be longer than 10 characters"
+         noSpace: "Password cannot contain spaces"
+       confirm_password:
+         required: "Confirm password cannot be blank!"
+         equalTo: "Confirm password is not equal to Password"       
    @
 
   createUser: (event) ->
@@ -26,6 +87,7 @@ class Shop.Views.UsersNew extends Backbone.View
       email: $(@el).find('#new_email').val()
       region: $(@el).find('#region :selected').val()
       role: $(@el).find('input:radio:checked').val()
+      
     @collection.create attributes,
       wait: true
       success: -> 

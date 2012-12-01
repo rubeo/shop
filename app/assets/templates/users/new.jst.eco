@@ -4,23 +4,23 @@
 <h2>Create a New User</h2>	
 <h4>This page is appointed for creating new user for particular role</h4>
 
-<label for="user_name">Login Name</label>
-<input type="text" name="name" id="new_login_name"/><br/>
+<label for="login_name">Login Name</label>
+<input type="text" name="login_name" id="new_login_name"/><br/>
 
 <label for="first_name">First Name</label>
-<input type="text" id="new_first_name"/><br/>
+<input type="text" name="first_name" id="new_first_name"/><br/>
 
 <label for="last_name">Last Name</label>
-<input type="text" id="new_lastName"/><br/>
+<input type="text" name="last_name" id="new_lastName"/><br/>
 
 <label for="password">Password</label>
-<input type="text" id="new_password"/><br/>
+<input type="password" name="password" id="new_password"/><br/>
 
 <label for="confirm_password">Confirm Password</label>
-<input type="text" id="new_confirmPassword"/><br/>
+<input type="password" name="confirm_password" id="new_confirmPassword"/><br/>
 
 <label for="email">Email</label>
-<input type="text" id="new_email"/><br/>
+<input type="text" name="email" id="new_email"/><br/>
 
 <label for="region">Region</label>
 <select id="region">
@@ -41,7 +41,7 @@
 <input type="radio" name="role" value="Supervisor" id="Supervisor" />	
 <label for="Supervisor">Supervisor</label><br/>
 
-<input type="radio" name="role" value="Customer" id="Customer" />	
+<input type="radio" name="role" value="Customer" id="Customer" checked/>	
 <label for="Customer">Customer</label><br/>
 </div>
 
