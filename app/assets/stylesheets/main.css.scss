@@ -99,6 +99,27 @@ form input[type='submit'], #back {
   vertical-align: top;
 }
 
+#duplicate {
+  -webkit-appearance: caret;
+  font-size: 14px;
+  font-size: 13px;
+  padding: 5px 10px 6px 10px;
+  font-weight: bold;
+  border: 1px solid #466A98;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #FFF;
+  background: #24882B;
+  background: -webkit-gradient(linear, left top, left bottom, from(#aa333f), to(#dd2424));
+  background: -moz-linear-gradient(top,  #aa333f,  #dd2424);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa333f', endColorstr='#dd2424');
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #036;
+  text-align: middle;
+  vertical-align: top;
+}
+
 #draw {
   margin: 20px auto;
 }

@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20130115092139) do
     t.datetime "updated_at",      :null => false
     t.string   "lastName"
     t.string   "password"
-    t.boolean  "confirmPassword"
+    t.string   "confirmPassword"
     t.string   "email"
   end
 
