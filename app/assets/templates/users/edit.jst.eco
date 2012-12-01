@@ -37,9 +37,9 @@
 </div>
 
 <div class="paging-buttons">
-    <input type="submit" value="Edit">
-    <button>Cancel</button>
-    <button>Refresh</button>
+    <input type="submit" value="Update">
+    <button id="cancel">Cancel</button>
+    <button id="refresh">Refresh</button>
 </div>
 
 </form>

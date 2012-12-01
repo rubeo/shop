@@ -30,4 +30,4 @@ class Shop.Routers.Users extends Backbone.Router
 
   duplicate: (id) ->
     dupl_user = @collection.duplicateUser(id)
-    view = new Shop.Views.UsersDuplicate({collection: @collection, attributes: dupl_user})    
+    duplView = new Shop.Views.UsersDuplicate({collection: @collection, attributes: dupl_user})    

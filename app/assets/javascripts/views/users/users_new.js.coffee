@@ -5,7 +5,9 @@ class Shop.Views.UsersNew extends Backbone.View
   template: JST['users/new']
 
   events:
-    "submit #new_user": "createUser"    
+    "submit #new_user": "createUser"
+    'click #cancel'   : 'returnOnMain'  
+    'click #refresh'  : 'refreshFields'  
 
   initialize: ->
     @collection.on('add', @render, @)
@@ -92,7 +94,6 @@ class Shop.Views.UsersNew extends Backbone.View
       wait: true
       success: -> 
         $('#new_user')[0].reset()
-        Backbone.history.navigate("/index", true)
       error: @handleError
 
   handleError: (user, response) ->
@@ -100,3 +101,17 @@ class Shop.Views.UsersNew extends Backbone.View
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
         alert "#{attribute} #{message}" for message in messages
+
+  returnOnMain: ->
+    if confirm 'Are you sure you want to cancel operation. All data will be lost?'
+      Backbone.history.navigate("/index", true)
+
+  refreshFields: ->
+    $(@el).find('#new_login_name').val('')
+    $(@el).find('#new_first_name').val('')
+    $(@el).find('#new_lastName').val('')
+    $(@el).find('#new_password').val('')
+    $(@el).find('#new_confirmPassword').val('')
+    $(@el).find('#new_email').val('')
+    $(@el).find('#region :selected').empty()
+    $(@el).find('input:radio:checked').empty()
