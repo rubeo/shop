@@ -1,5 +1,5 @@
 <h4>This page is appointed for creating new and managing existing users</h4>
-<a href="#">Create New User</a>
+<a id=user_create_button href="#">Create New User</a>
 <div>Number of Found Users <a href="#"> #</a></div>
 <div  class="panel">
 <h4>Search by</h4>
@@ -38,4 +38,3 @@
 <button id="last">Last</button>
 </div>
 
-<button id="user_create_button">Create User</button>
