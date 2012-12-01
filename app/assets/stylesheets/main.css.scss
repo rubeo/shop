@@ -36,7 +36,14 @@ form input {
 form input[type='text'] {
   width: 535px;
 }
-form input[type='submit'], #user_create_button, #back {
+
+form select {
+  font-size: 20px;
+  width: 535px;
+}
+
+
+form input[type='submit'], #user_create_button, #back, #user_cancel_button, #user_refresh_button {
   -webkit-appearance: caret;
   font-size: 14px;
   font-size: 13px;
