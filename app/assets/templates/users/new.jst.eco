@@ -1,4 +1,45 @@
 <form id="new_user">
+
+
+<h2>Create a New User</h2>	
+<h4>This page is appointed for creating new user for particular role</h4>
+
+<label for="user_name">Login Name</label>
+<input type="text" name="name" id="new_user_name"/><br/>
+
+<label for="first_name">First Name</label>
+<input type="text" id="first_name"/><br/>
+
+<label for="last_name">Last Name</label>
+<input type="text" id="last_name"/><br/>
+
+<label for="password">Password</label>
+<input type="text" id="password"/><br/>
+
+<label for="confirm_password">Confirm Password</label>
+<input type="text" id="confirm_password"/><br/>
+
+<label for="email">Email</label>
+<input type="text" id="email"/><br/>
+
+<label for="region">Region</label>
+<input type="text" id="region"/><br/>
+
+<div class="panel">
+<h4>Role</h4>
+<input type="radio" name="role" value="Administrator" id="Administrator" />	
+<label for="Administrator">Administrator</label><br/>
+
+<input type="radio" name="role" value="Merchandiser" id="Merchandiser" />	
+<label for="Merchandiser">Merchandiser</label><br/>
+
+<input type="radio" name="role" value="Supervisor" id="Supervisor" />	
+<label for="Supervisor">Supervisor</label><br/>
+
+<input type="radio" name="role" value="Customer" id="Customer" />	
+<label for="Customer">Customer</label><br/>
+
+</div>
   <div class="field">
     Name:<input type="text" name="name" id="new_user_name">
   </div>
@@ -7,9 +48,12 @@
     Role: <input type="text" name="role" id="new_user_role">
   </div>
 
-  <div class="actions">
-    <input type="submit" value="Add">
+  <div class="paging-buttons">
+    <input type="submit" value="Create">
+    <button>Cancel</button>
+    <button>Refresh</button>
   </div>
+  
 </form>
 
 <button id="back">Back</button>
