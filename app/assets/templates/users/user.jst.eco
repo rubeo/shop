@@ -1,2 +1,9 @@
 <td><%= @user.get('name') %></td> 
 <td><%= @user.get('role') %></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
