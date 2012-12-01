@@ -1,2 +1,2 @@
-User.create!(name: "Vasya", role: "admin")
-User.create!(name: "Valya", role: "customer")
+User.create!(login_name: "Petya", first_name: "Petr", lastName: "Syan", password: "sowhat", confirmPassword: "sowhat", email: "lala@gmail.com")
+User.create!(login_name: "Petya", first_name: "Akkerson", lastName: "Zee", password: "bar", confirmPassword: "bar", email: "lska@gmail.com")
