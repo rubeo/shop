@@ -4,14 +4,20 @@
 <h2>Duplicate existing User</h2>  
 <h4>This page is appointed for duplicating existing user</h4>
 
-<label for="user_name">Login Name</label>
-<input type="text" name="name" id="new_login_name"/><br/>
+<div>
+  <label for="user_name">Login Name</label>
+  <input type="text" name="name" id="new_login_name"/>
+</div>
 
-<label for="password">Password</label>
-<input type="text" id="new_password"/><br/>
+<div>
+  <label for="password">Password</label>
+  <input type="password" id="new_password"/>
+</div>
 
+<div>
 <label for="confirm_password">Confirm Password</label>
-<input type="text" id="new_confirmPassword"/><br/>
+<input type="password" id="new_confirmPassword"/><br/>
+</div>
 
 <div class="paging-buttons">
     <input type="submit" value="Duplicate">

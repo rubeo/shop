@@ -4,22 +4,30 @@
 <h2>Edit User</h2>  
 <h4>This page is appointed for editing existing user for particular role</h4>
 
-<label for="first_name">First Name</label>
-<input type="text" id="new_first_name" value=<%= @user.get('first_name') %> ><br/>
+<div>
+  <label for="first_name">First Name</label>
+  <input type="text" id="new_first_name" value=<%= @user.get('first_name') %> >
+</div>
 
-<label for="last_name">Last Name</label>
-<input type="text" id="new_lastName" value=<%= @user.get('lastName') %> ><br/>
+<div>
+  <label for="last_name">Last Name</label>
+  <input type="text" id="new_lastName" value=<%= @user.get('lastName') %> >
+</div>
 
-<label for="email">Email</label>
-<input type="text" id="new_email" value=<%= @user.get('email') %> ><br/>
+<div>
+  <label for="email">Email</label>
+  <input type="text" id="new_email" value=<%= @user.get('email') %> >
+</div>
 
-<label for="region">Region</label>
-<select id="region">
-  <option selected value="South">South</option>
-  <option value="North">North</option>
-  <option value="West">West</option>
-  <option value="East">East</option>
-</select>
+<div>
+  <label for="region">Region</label>
+  <select id="region">
+    <option selected value="South">South</option>
+    <option value="North">North</option>
+    <option value="West">West</option>
+    <option value="East">East</option>
+  </select>
+</div>
 
 <div class="panel">
 <h4>Role</h4>
