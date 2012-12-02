@@ -33,8 +33,9 @@ a {
 form input {
   font-size: 20px;
 }
-form input[type='text'] {
+form input[type='text'], form input[type='password'] {
   width: 535px;
+  float: left
 }
 
 form select {
@@ -42,7 +43,9 @@ form select {
   width: 535px;
 }
 
-
+form div {
+  clear: both;
+}
 
 form input[type='submit'], form div button, #user_create_button {
   -webkit-appearance: caret;
@@ -210,12 +213,17 @@ td {
 label {
   display:block;
   width:130px;
-  float:left;
-  
+  float:left;  
 }
 
 
-label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+label.error { 
+  float: left; 
+  color: red; 
+  padding-left: .5em; 
+  vertical-align: top; 
+  width: 250px;
+}
 
 .paging-buttons {
    padding: 5px;

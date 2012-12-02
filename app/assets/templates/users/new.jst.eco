@@ -4,24 +4,37 @@
 <h2>Create a New User</h2>	
 <h4>This page is appointed for creating new user for particular role</h4>
 
+<div>
 <label for="login_name">Login Name</label>
-<input type="text" name="login_name" id="new_login_name"/><br/>
+<input type="text" name="login_name" id="new_login_name"/>
+</div>
 
+<div>
 <label for="first_name">First Name</label>
-<input type="text" name="first_name" id="new_first_name"/><br/>
+<input type="text" name="first_name" id="new_first_name"/>
+</div>
 
+<div>
 <label for="last_name">Last Name</label>
-<input type="text" name="last_name" id="new_lastName"/><br/>
+<input type="text" name="last_name" id="new_lastName"/>
+</div>
 
+<div>
 <label for="password">Password</label>
-<input type="password" name="password" id="new_password"/><br/>
+<input type="password" name="password" id="new_password"/>
+</div>
 
+<div>
 <label for="confirm_password">Confirm Password</label>
-<input type="password" name="confirm_password" id="new_confirmPassword"/><br/>
+<input type="password" name="confirm_password" id="new_confirmPassword"/>
+</div>
 
+<div>
 <label for="email">Email</label>
-<input type="text" name="email" id="new_email"/><br/>
+<input type="text" name="email" id="new_email"/>
+</div>
 
+<div>
 <label for="region">Region</label>
 <select id="region">
   <option value="South">South</option>
@@ -29,6 +42,7 @@
   <option value="West">West</option>
   <option value="East">East</option>
 </select>
+</div>
 
 <div class="panel">
 <h4>Role</h4>

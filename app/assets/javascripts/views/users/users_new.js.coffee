@@ -7,76 +7,90 @@ class Shop.Views.UsersNew extends Backbone.View
   events:
     "submit #new_user": "createUser"
     'click #cancel'   : 'returnOnMain'  
-    'click #refresh'  : 'refreshFields'  
+    'click #refresh'  : 'refreshFields'
+    'focusout input[name=login_name]': 'checkLogin'  
 
   initialize: ->
     @collection.on('add', @render, @)
     @render()
+  
+  checkLogin: ->
+    $.getJSON "/api/users.json", (data) ->
+      $.each data, (index, user) ->
+        if user.login_name is $("input[name=login_name]").val()
+          $('#new_login_name').after('<label for="new_login_name" generated="true" class="error">Login name already exists</label>')
+          true
 
   render: ->
-   @$el.html(@template())
+    @$el.html(@template())
    
-   jQuery.validator.addMethod "noSpace", ((value, element) ->
-     value.indexOf(" ")<0
-   ), "Field cannot contain spaces"
+    jQuery.validator.addMethod "noSpace", ((value, element) ->
+      value.indexOf(" ")<0
+    ), "Field cannot contain spaces"
    
-   jQuery.validator.addMethod "noNumbers", ((value, element) ->
-     not /\d/.test(value)
-   ), "cannot contain numbers"  
+    jQuery.validator.addMethod "noNumbers", ((value, element) ->
+      not /\d/.test(value)
+    ), "cannot contain numbers"  
 
-   @$('form').validate
-     rules:
-       login_name: 
-         required: true
-         maxlength: 20
-         noSpace: true 
+    jQuery.validator.addMethod "passwordComplexity", ((value, element) ->
+      /[!@#$%^&*()_+|~\-=\\/'{}\[\]:"`<>?,.]/.test(value) and /[A-Z]/.test(value) and /[a-z]/.test(value) and /\d/.test(value)
+    ), "The value provided for the password does not meet required complexity"
 
-       first_name: 
-         required: true
-         maxlength: 50
-         noNumbers: true
+   
+    @$('form').validate
+      rules:
+        login_name: 
+          required: true
+          maxlength: 20
+          noSpace: true
+          
+        first_name: 
+          required: true
+          maxlength: 50
+          noNumbers: true
 
-       last_name: 
-         required: true
-         maxlength: 50
-         noNumbers: true
+        last_name: 
+          required: true
+          maxlength: 50
+          noNumbers: true
 
-       password:
-         required: true
-         minlength: 4
-         maxlength: 10
-         noSpace: true
+        password:
+          required: true
+          minlength: 4
+          maxlength: 10
+          noSpace: true
+          passwordComplexity: true
 
-       confirm_password:
-         required: true
-         equalTo: "#new_password"
+        confirm_password:
+          required: true
+          equalTo: "#new_password"
 
-       email:
-         required: true
-         email: true
+        email:
+          required: true
+          email: true
 
-     messages:
-       login_name: 
-         required: "Login name cannot be blank!"
-         maxlength: "Login name is too long"
-         noSpace: "Login name cannot contain spaces"
-       first_name: 
-         required: "First name cannot be blank!"
-         maxlength: "First name is too long"
-         noNumbers: "First name cannot contain numbers"
-       last_name: 
-         required: "Last name cannot be blank!"
-         maxlength: "Last name is too long"
-         noNumbers: "Last name cannot contain numbers"
-       password:
-         required: "Password cannot be blank!"
-         minlength: "Password field cannot be shorter than 4 characters"
-         maxlength: "Password field cannot be longer than 10 characters"
-         noSpace: "Password cannot contain spaces"
-       confirm_password:
-         required: "Confirm password cannot be blank!"
-         equalTo: "Confirm password is not equal to Password"       
-   @
+      messages:
+        login_name: 
+          required: "Login name cannot be blank!"
+          maxlength: "Login name is too long"
+          noSpace: "Login name cannot contain spaces"
+        first_name: 
+          required: "First name cannot be blank!"
+          maxlength: "First name is too long"
+          noNumbers: "First name cannot contain numbers"
+        last_name: 
+          required: "Last name cannot be blank!"
+          maxlength: "Last name is too long"
+          noNumbers: "Last name cannot contain numbers"
+        password:
+          required: "Password cannot be blank!"
+          minlength: "Password field cannot be shorter than 4 characters"
+          maxlength: "Password field cannot be longer than 10 characters"
+          noSpace: "Password cannot contain spaces"
+        confirm_password:
+          required: "Confirm password cannot be blank!"
+          equalTo: "Confirm password is not equal to Password"       
+    @
 
   createUser: (event) ->
     event.preventDefault()
