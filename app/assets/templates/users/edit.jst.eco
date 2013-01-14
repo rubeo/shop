@@ -1,0 +1,15 @@
+<form id="edit_user">
+  <div class="field">
+    Name:<input type="text" name="name" id="edit_user_name">
+  </div>
+
+  <div class="field">
+    Role: <input type="text" name="role" id="edit_user_role">
+  </div>
+
+  <div class="actions">
+    <input type="submit" id="edit" value="Edit">
+  </div>
+</form>
+
+<button id="back">Back</button>
