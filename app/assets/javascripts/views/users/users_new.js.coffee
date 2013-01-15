@@ -13,7 +13,6 @@ class Shop.Views.UsersNew extends Backbone.View
 
   render: ->
    @$el.html(@template())
-   #@collection.each(@appendEntry) if need history back calls ajax adding
    @
 
   createUser: (event) ->
@@ -39,6 +38,3 @@ class Shop.Views.UsersNew extends Backbone.View
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
         alert "#{attribute} #{message}" for message in messages
-
-  returnOnMain: ->
-    Backbone.history.navigate("/index", true)

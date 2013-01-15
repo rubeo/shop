@@ -38,7 +38,7 @@ gem 'quiet_assets'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# wat
+# WATMAN
 
 group :development do
   gem 'debugger'

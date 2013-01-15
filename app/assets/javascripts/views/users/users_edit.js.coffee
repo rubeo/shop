@@ -36,7 +36,4 @@ class Shop.Views.UsersEdit extends Backbone.View
     if response.status == 422
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
-        alert "#{attribute} #{message}" for message in messages
-
-  returnOnMain: ->
-    Backbone.history.navigate("/index", true)      
+        alert "#{attribute} #{message}" for message in messages    

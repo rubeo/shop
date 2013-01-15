@@ -8,7 +8,6 @@ class Shop.Views.UsersShow extends Backbone.View
   el: '#app'
 
   initialize: ->
-    #@model.on 'destroy', @returnOnMain, @
     @render()
 
   render: ->
