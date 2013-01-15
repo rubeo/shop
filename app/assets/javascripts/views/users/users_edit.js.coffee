@@ -24,8 +24,8 @@ class Shop.Views.UsersEdit extends Backbone.View
       password: $('#new_password').val()
       confirmPassword: $('#new_confirmPassword').val()
       email: $('#new_email').val()
-      #regions
-      #roles
+      region: $('#region :selected').val()
+      role: $('input:radio:checked').val()
     @model.save attributes,
       wait: true
       success: -> 

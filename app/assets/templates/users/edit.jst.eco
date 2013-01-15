@@ -5,16 +5,20 @@
 <h4>This page is appointed for editing existing user for particular role</h4>
 
 <label for="first_name">First Name</label>
-<input type="text" id="new_first_name"/><br/>
+<input type="text" id="new_first_name" value=<%= @user.get('first_name') %> ><br/>
 
 <label for="last_name">Last Name</label>
-<input type="text" id="new_lastName"/><br/>
+<input type="text" id="new_lastName" value=<%= @user.get('lastName') %> ><br/>
 
 <label for="email">Email</label>
-<input type="text" id="new_email"/><br/>
+<input type="text" id="new_email" value=<%= @user.get('email') %> ><br/>
 
-<label for="region">Region</label>
-<input type="text" id="new_region"/><br/>
+<select id="region">
+  <option selected value="South">South</option>
+  <option value="North">North</option>
+  <option value="West">West</option>
+  <option value="East">East</option>
+</select>
 
 <div class="panel">
 <h4>Role</h4>
@@ -27,7 +31,7 @@
 <input type="radio" name="role" value="Supervisor" id="Supervisor" /> 
 <label for="Supervisor">Supervisor</label><br/>
 
-<input type="radio" name="role" value="Customer" id="Customer" /> 
+<input type="radio" name="role" value="Customer" id="Customer" checked /> 
 <label for="Customer">Customer</label><br/>
 </div>
 

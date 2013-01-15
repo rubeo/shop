@@ -26,8 +26,8 @@ class Shop.Views.UsersNew extends Backbone.View
       password: $('#new_password').val()
       confirmPassword: $('#new_confirmPassword').val()
       email: $('#new_email').val()
-      #regions
-      #roles
+      region: $('#region :selected').val()
+      role: $('input:radio:checked').val()
     @collection.create attributes,
       wait: true
       success: -> 

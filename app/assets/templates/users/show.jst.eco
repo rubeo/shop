@@ -6,7 +6,7 @@
 
 <p>
   <b>Role:</b>
-  <%=  %>Role
+  <%= @user.get('role') %>
 </p>
 
 <button id="back">Back</button>

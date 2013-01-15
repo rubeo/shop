@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115092139) do
+ActiveRecord::Schema.define(:version => 20130115155545) do
 
   create_table "regions", :force => true do |t|
     t.string   "north",      :default => "North"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20130115092139) do
     t.string   "password"
     t.boolean  "confirmPassword"
     t.string   "email"
+    t.string   "region"
+    t.string   "role"
   end
 
 end

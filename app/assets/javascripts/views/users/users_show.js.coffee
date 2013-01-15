@@ -4,8 +4,7 @@ class Shop.Views.UsersShow extends Backbone.View
 
   events:
     'click #back': 'returnOnMain'
-   #'click #destroy': 'destroy'
-
+    
   el: '#app'
 
   initialize: ->
@@ -17,7 +16,4 @@ class Shop.Views.UsersShow extends Backbone.View
     @
 
   returnOnMain: ->
-    Backbone.history.navigate("/index", true)
-
-  #destroy: ->
-   # @model.destroy()
+    Backbone.history.navigate("/index", true)  

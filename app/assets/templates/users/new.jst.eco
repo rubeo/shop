@@ -22,8 +22,12 @@
 <label for="email">Email</label>
 <input type="text" id="new_email"/><br/>
 
-<label for="region">Region</label>
-<input type="text" id="new_region"/><br/>
+<select id="region">
+  <option value="South">South</option>
+  <option value="North">North</option>
+  <option value="West">West</option>
+  <option value="East">East</option>
+</select>
 
 <div class="panel">
 <h4>Role</h4>

@@ -6,10 +6,11 @@ class Shop.Views.UsersUser extends Backbone.View
   events:
     'dblclick': 'showUser'
     'click #edit': 'goToEdit'
+    'click #destroy': 'destroy'
    
   initialize: ->
     @model.on('change', @render, @) #no need here
-
+    
   render: ->
     $(@el).html(@template(user: @model))
     @
@@ -20,3 +21,5 @@ class Shop.Views.UsersUser extends Backbone.View
   goToEdit: ->
     Backbone.history.navigate("#{@model.get('id')}/edit", true)
   
+  destroy: ->
+    @model.destroy()
