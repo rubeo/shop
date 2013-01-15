@@ -1,6 +1,6 @@
 <h4>This page is appointed for creating new and managing existing users</h4>
-<a href="#">Create New User</a>
-<div>Number of Found Users <a href="#"> #</a></div>
+<button id="user_create_button">Create New User</button>
+<div>Number of Found Users #<%= @users.length %></a></div>
 <div  class="panel">
 <h4>Search by</h4>
 <label>Field Filter</label><br/>
@@ -16,6 +16,7 @@
 
 <a class="paging" href="#">show 25 items</a>
 <table id="users">
+<tbody>
 <tr>
 	<th>User name</th>
 	<th>First name</th>
@@ -27,6 +28,7 @@
 	<th>Remove</th>
 	<th>Duplicate</th> 
 </tr>
+</tbody>
 </table>
 
 <div id="paging-title">Page #: 3 from 10</div>
@@ -37,5 +39,3 @@
 <button id="forward">Forward</button>
 <button id="last">Last</button>
 </div>
-
-<button id="user_create_button">Create User</button>

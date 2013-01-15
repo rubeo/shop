@@ -38,6 +38,8 @@ gem 'quiet_assets'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+# wat
+
 group :development do
   gem 'debugger'
   gem 'better_errors'

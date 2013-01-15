@@ -28,7 +28,9 @@ class Shop.Views.UsersEdit extends Backbone.View
       #roles
     @model.save attributes,
       wait: true
-      success: -> $('#edit_user')[0].reset() 
+      success: -> 
+        $('#edit_user')[0].reset() 
+        Backbone.history.navigate("/index", true)
       error: @handleError
 
   handleError: (user, response) ->

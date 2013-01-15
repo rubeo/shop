@@ -5,25 +5,25 @@
 <h4>This page is appointed for creating new user for particular role</h4>
 
 <label for="user_name">Login Name</label>
-<input type="text" name="name" id="new_user_name"/><br/>
+<input type="text" name="name" id="new_login_name"/><br/>
 
 <label for="first_name">First Name</label>
-<input type="text" id="first_name"/><br/>
+<input type="text" id="new_first_name"/><br/>
 
 <label for="last_name">Last Name</label>
-<input type="text" id="last_name"/><br/>
+<input type="text" id="new_lastName"/><br/>
 
 <label for="password">Password</label>
-<input type="text" id="password"/><br/>
+<input type="text" id="new_password"/><br/>
 
 <label for="confirm_password">Confirm Password</label>
-<input type="text" id="confirm_password"/><br/>
+<input type="text" id="new_confirmPassword"/><br/>
 
 <label for="email">Email</label>
-<input type="text" id="email"/><br/>
+<input type="text" id="new_email"/><br/>
 
 <label for="region">Region</label>
-<input type="text" id="region"/><br/>
+<input type="text" id="new_region"/><br/>
 
 <div class="panel">
 <h4>Role</h4>
@@ -38,22 +38,14 @@
 
 <input type="radio" name="role" value="Customer" id="Customer" />	
 <label for="Customer">Customer</label><br/>
-
 </div>
-  <div class="field">
-    Name:<input type="text" name="name" id="new_user_name">
-  </div>
 
-  <div class="field">
-    Role: <input type="text" name="role" id="new_user_role">
-  </div>
-
-  <div class="paging-buttons">
+<div class="paging-buttons">
     <input type="submit" value="Create">
     <button>Cancel</button>
     <button>Refresh</button>
-  </div>
-  
+</div>
+
 </form>
 
 <button id="back">Back</button>

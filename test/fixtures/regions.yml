@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  north: MyString
+  south: MyString
+  west: MyString
+  east: MyString
+
+two:
+  north: MyString
+  south: MyString
+  west: MyString
+  east: MyString

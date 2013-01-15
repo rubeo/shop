@@ -4,7 +4,8 @@ class Shop.Views.UsersUser extends Backbone.View
   tagName: 'tr'
 
   events:
-    'click': 'showUser'
+    'dblclick': 'showUser'
+    'click #edit': 'goToEdit'
    
   initialize: ->
     @model.on('change', @render, @) #no need here
@@ -15,4 +16,7 @@ class Shop.Views.UsersUser extends Backbone.View
 
   showUser: ->
     Backbone.history.navigate("users/#{@model.get('id')}", true)
+
+  goToEdit: ->
+    Backbone.history.navigate("#{@model.get('id')}/edit", true)
   
