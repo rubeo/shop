@@ -1,12 +1,22 @@
 <h4>This page is appointed for creating new and managing existing users</h4>
 <button id="user_create_button">Create New User</button>
-<div>Number of Found Users #<%= @users.length %></a></div>
+<div>Number of Found Users: <%= @users.length %></a></div>
 <div  class="panel">
 <h4>Search by</h4>
 <label>Field Filter</label><br/>
-<select><option>User Name</option>
+<select>
+  <option>User Name</option>
+  <option>All Columns</option>
+  <option>First Name</option>
+  <option>Last Name</option>
+  <option>Role</option>
 </select>
-<select><option>starts with</option>
+<select>
+  <option>starts with</option>
+  <option>equals</option>
+  <option>not equal to</option>
+  <option>contains</option>
+  <option>does not contain</option>
 </select>
 <input type="text" /><br/>
 
