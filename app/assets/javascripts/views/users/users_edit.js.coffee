@@ -18,14 +18,8 @@ class Shop.Views.UsersEdit extends Backbone.View
   editUser: (event) ->
     event.preventDefault()
     attributes = 
-      login_name: $('#new_login_name').val()
-      first_name: $('#new_first_name').val()
-      lastName: $('#new_lastName').val()
-      password: $('#new_password').val()
-      confirmPassword: $('#new_confirmPassword').val()
-      email: $('#new_email').val()
-      #regions
-      #roles
+      name: $('#edit_user_name').val()
+      role: $('#edit_user_role').val()
     @model.save attributes,
       wait: true
       success: -> $('#edit_user')[0].reset() 

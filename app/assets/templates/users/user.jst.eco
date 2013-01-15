@@ -1,6 +1,9 @@
-<td><%= @user.get('login_name') %></td> 
-<td><%= @user.get('first_name') %></td>
-<td><%= @user.get('lastName') %></td> 
-<td><%= @user.get('password') %></td>
-<td><%= @user.get('confirmPassword') %></td> 
-<td><%= @user.get('email') %></td>
+<td><%= @user.get('name') %></td> 
+<td><%= @user.get('role') %></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
