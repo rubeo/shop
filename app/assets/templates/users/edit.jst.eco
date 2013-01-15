@@ -13,6 +13,7 @@
 <label for="email">Email</label>
 <input type="text" id="new_email" value=<%= @user.get('email') %> ><br/>
 
+<label for="region">Region</label>
 <select id="region">
   <option selected value="South">South</option>
   <option value="North">North</option>
@@ -36,11 +37,9 @@
 </div>
 
 <div class="paging-buttons">
-    <input type="submit" value="Edit">
+    <input type="submit" value="Create">
     <button>Cancel</button>
     <button>Refresh</button>
 </div>
 
 </form>
-  
-<button id="back">Back</button>

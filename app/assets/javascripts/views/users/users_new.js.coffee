@@ -5,8 +5,7 @@ class Shop.Views.UsersNew extends Backbone.View
   template: JST['users/new']
 
   events:
-    "submit #new_user": "createUser"
-    'click #back': 'returnOnMain'
+    "submit #new_user": "createUser"    
 
   initialize: ->
     @collection.on('add', @render, @)

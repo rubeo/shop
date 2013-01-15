@@ -36,7 +36,15 @@ form input {
 form input[type='text'] {
   width: 535px;
 }
-form input[type='submit'], #user_create_button, #back {
+
+form select {
+  font-size: 20px;
+  width: 535px;
+}
+
+
+
+form input[type='submit'], form div button, #user_create_button {
   -webkit-appearance: caret;
   font-size: 14px;
   font-size: 13px;
@@ -56,6 +64,7 @@ form input[type='submit'], #user_create_button, #back {
   text-align: middle;
   vertical-align: top;
 }
+
 
 #destroy {
   -webkit-appearance: caret;
