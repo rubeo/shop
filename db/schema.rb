@@ -11,13 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114174823) do
+ActiveRecord::Schema.define(:version => 20130115092139) do
+
+  create_table "regions", :force => true do |t|
+    t.string   "north",      :default => "North"
+    t.string   "south",      :default => "South"
+    t.string   "west",       :default => "West"
+    t.string   "east",       :default => "East"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "administrator", :default => "Administrator"
+    t.string   "merchandiser",  :default => "Merchandiser"
+    t.string   "supervisor",    :default => "Supervisor"
+    t.string   "customer",      :default => "Customer"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "role"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "login_name"
+    t.string   "first_name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "lastName"
+    t.string   "password"
+    t.boolean  "confirmPassword"
+    t.string   "email"
   end
 
 end

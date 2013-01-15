@@ -2,8 +2,15 @@
 <table>
   <tbody>
     <tr>
-     <th>Name</th>
+     <th>Login Name</th>
+     <th>First Name</th>
+     <th>Last Name</th>
      <th>Role</th>
+     <th>Email</th>
+     <th>Region</th>
+     <th>Edit</th>
+     <th>Remove</th>
+     <th>Duplicate</th>
      </tr>
   </tbody>
 </table>
