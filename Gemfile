@@ -21,9 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'backbone-on-rails'
-
 gem 'quiet_assets'
 
 # To use ActiveModel has_secure_password
