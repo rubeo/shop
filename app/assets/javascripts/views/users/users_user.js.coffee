@@ -7,6 +7,7 @@ class Shop.Views.UsersUser extends Backbone.View
     'dblclick': 'showUser'
     'click #edit': 'goToEdit'
     'click #destroy': 'destroy'
+    'click #duplicate': 'goToDuplicate'
    
   initialize: ->
     @model.on('change', @render, @) #no need here
@@ -21,5 +22,8 @@ class Shop.Views.UsersUser extends Backbone.View
   goToEdit: ->
     Backbone.history.navigate("#{@model.get('id')}/edit", true)
   
+  goToDuplicate: -> 
+    Backbone.history.navigate("#{@model.get('id')}/duplicate", true) 
+
   destroy: ->
-    @model.destroy()
+    @collection.remove(@model) if confirm 'The user will be deleted from the List of Users. Are you sure you want to proceed?'   

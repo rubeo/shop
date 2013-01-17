@@ -9,6 +9,7 @@ class Shop.Views.UsersIndex extends Backbone.View
     @collection.on('reset', @render, @)
     @collection.on('add', @render, @)
     @collection.on('destroy', @render, @)
+    @collection.on('change', @render, @)
             
   render: ->
     $(@el).html(@template(users: @collection))

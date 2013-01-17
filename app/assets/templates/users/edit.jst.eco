@@ -37,7 +37,7 @@
 </div>
 
 <div class="paging-buttons">
-    <input type="submit" value="Create">
+    <input type="submit" value="Edit">
     <button>Cancel</button>
     <button>Refresh</button>
 </div>
