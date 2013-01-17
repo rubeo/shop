@@ -21,9 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'backbone-on-rails'
-
 gem 'quiet_assets'
 
 # To use ActiveModel has_secure_password
@@ -37,8 +35,6 @@ gem 'quiet_assets'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# WATMAN
 
 group :development do
   gem 'debugger'
