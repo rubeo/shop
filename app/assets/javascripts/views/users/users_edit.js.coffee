@@ -36,7 +36,7 @@ class Shop.Views.UsersEdit extends Backbone.View
         alert "#{attribute} #{message}" for message in messages    
 
   returnOnMain: ->
-    if confirm 'Do you really want to cancel this action and return on main page?'
+    if confirm 'Are you sure you want to cancel operation. All data will be lost?'
       Backbone.history.navigate("/index", true)
 
   refreshFields: ->
