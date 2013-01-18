@@ -26,4 +26,4 @@ class Shop.Views.UsersUser extends Backbone.View
     Backbone.history.navigate("#{@model.get('id')}/duplicate", true) 
 
   destroy: ->
-    @collection.remove(@model) if confirm 'The user will be deleted from the List of Users. Are you sure you want to proceed?'   
+    @model.destroy() if confirm 'The user will be deleted from the List of Users. Are you sure you want to proceed?'   

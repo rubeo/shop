@@ -18,14 +18,14 @@ class Shop.Views.UsersNew extends Backbone.View
   createUser: (event) ->
     event.preventDefault()
     attributes = 
-      login_name: $('#new_login_name').val()
-      first_name: $('#new_first_name').val()
-      lastName: $('#new_lastName').val()
-      password: $('#new_password').val()
-      confirmPassword: $('#new_confirmPassword').val()
-      email: $('#new_email').val()
-      region: $('#region :selected').val()
-      role: $('input:radio:checked').val()
+      login_name: $(@el).find('#new_login_name').val()
+      first_name: $(@el).find('#new_first_name').val()
+      lastName: $(@el).find('#new_lastName').val()
+      password: $(@el).find('#new_password').val()
+      confirmPassword: $(@el).find('#new_confirmPassword').val()
+      email: $(@el).find('#new_email').val()
+      region: $(@el).find('#region :selected').val()
+      role: $(@el).find('input:radio:checked').val()
     @collection.create attributes,
       wait: true
       success: -> 

@@ -29,5 +29,5 @@ class Shop.Routers.Users extends Backbone.Router
     view = new Shop.Views.UsersEdit({model: usr})
 
   duplicate: (id) ->
-    usr = @collection.get(id)
-    view = new Shop.Views.UsersDuplicate({collection: @collection, id: usr.id})
+    dupl_user = @collection.duplicateUser(id)
+    view = new Shop.Views.UsersDuplicate({collection: @collection, attributes: dupl_user})    
