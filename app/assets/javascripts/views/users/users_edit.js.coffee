@@ -14,8 +14,42 @@ class Shop.Views.UsersEdit extends Backbone.View
     @render()
 
   render: ->
-    $(@el).html(@template(user: @model))
-    @
+   $(@el).html(@template(user: @model))
+
+   jQuery.validator.addMethod "noSpace", ((value, element) ->
+     value.indexOf(" ")<0
+   ), "Field cannot contain spaces"
+   
+   jQuery.validator.addMethod "noNumbers", ((value, element) ->
+     not /\d/.test(value)
+   ), "cannot contain numbers"  
+
+   @$('form').validate
+     rules:
+       first_name: 
+         required: true
+         maxlength: 50
+         noNumbers: true
+
+       lastName: 
+         required: true
+         maxlength: 50
+         noNumbers: true
+
+       email:
+         required: true
+         email: true
+
+     messages:
+       first_name: 
+         required: "First name cannot be blank!"
+         maxlength: "First name is too long"
+         noNumbers: "First name cannot contain numbers"
+       lastName: 
+         required: "Last name cannot be blank!"
+         maxlength: "Last name is too long"
+         noNumbers: "Last name cannot contain numbers"
+   @
 
   editUser: (event) ->
     event.preventDefault()

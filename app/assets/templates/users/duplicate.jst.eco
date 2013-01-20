@@ -6,17 +6,17 @@
 
 <div>
   <label for="user_name">Login Name</label>
-  <input type="text" name="name" id="new_login_name"/>
+  <input type="text" name="login_name" id="new_login_name"/>
 </div>
 
 <div>
   <label for="password">Password</label>
-  <input type="password" id="new_password"/>
+  <input type="password" name="password" id="new_password"/>
 </div>
 
 <div>
 <label for="confirm_password">Confirm Password</label>
-<input type="password" id="new_confirmPassword"/><br/>
+<input type="password" name="confirmPassword" id="new_confirmPassword"/><br/>
 </div>
 
 <div class="paging-buttons">

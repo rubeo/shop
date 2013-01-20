@@ -1,7 +1,7 @@
 <form id="new_user">
 
 
-<h2>Create a New User</h2>	
+<h2>Create a New User</h2>  
 <h4>This page is appointed for creating new user for particular role</h4>
 
 <div>
@@ -16,7 +16,7 @@
 
 <div>
 <label for="last_name">Last Name</label>
-<input type="text" name="last_name" id="new_lastName"/>
+<input type="text" name="lastName" id="new_lastName"/>
 </div>
 
 <div>
@@ -26,7 +26,7 @@
 
 <div>
 <label for="confirm_password">Confirm Password</label>
-<input type="password" name="confirm_password" id="new_confirmPassword"/>
+<input type="password" name="confirmPassword" id="new_confirmPassword"/>
 </div>
 
 <div>
@@ -46,16 +46,16 @@
 
 <div class="panel">
 <h4>Role</h4>
-<input type="radio" name="role" value="Administrator" id="Administrator" />	
+<input type="radio" name="role" value="Administrator" id="Administrator" /> 
 <label for="Administrator">Administrator</label><br/>
 
-<input type="radio" name="role" value="Merchandiser" id="Merchandiser" />	
+<input type="radio" name="role" value="Merchandiser" id="Merchandiser" /> 
 <label for="Merchandiser">Merchandiser</label><br/>
 
-<input type="radio" name="role" value="Supervisor" id="Supervisor" />	
+<input type="radio" name="role" value="Supervisor" id="Supervisor" /> 
 <label for="Supervisor">Supervisor</label><br/>
 
-<input type="radio" name="role" value="Customer" id="Customer" checked/>	
+<input type="radio" name="role" value="Customer" id="Customer" checked/>  
 <label for="Customer">Customer</label><br/>
 </div>
 

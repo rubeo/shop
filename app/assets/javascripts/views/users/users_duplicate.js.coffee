@@ -8,14 +8,65 @@ class Shop.Views.UsersDuplicate extends Backbone.View
     'submit #duplicate_user': 'duplicateUser'  
     'click #cancel': 'returnOnMain'   
     'click #refresh': 'refreshFields'
+    'focusout input[name=login_name]': 'checkLogin'
 
   initialize: ->
     @collection.on('add', @render, @)
     @render()
 
+  checkLogin: ->
+    $.getJSON "/api/users.json", (data) ->
+      $.each data, (index, user) ->
+        if user.login_name is $("input[name=login_name]").val()
+          $('#new_login_name').after('<label for="new_login_name" generated="true" class="error">Login name already exists</label>')
+          true
+
   render: ->
-    $(@el).html(@template())
-    @
+   $(@el).html(@template())
+   jQuery.validator.addMethod "noSpace", ((value, element) ->
+     value.indexOf(" ")<0
+   ), "Field cannot contain spaces"
+   
+   jQuery.validator.addMethod "noNumbers", ((value, element) ->
+     not /\d/.test(value)
+   ), "cannot contain numbers"  
+
+   jQuery.validator.addMethod "passwordComplexity", ((value, element) ->
+      /[!@#$%^&*()_+|~\-=\\/'{}\[\]:"`<>?,.]/.test(value) and /[A-Z]/.test(value) and /[a-z]/.test(value) and /\d/.test(value)
+    ), "The value provided for the password does not meet required complexity"
+
+   @$('form').validate
+     rules:
+       login_name: 
+         required: true
+         maxlength: 20
+         noSpace: true 
+
+       password:
+         required: true
+         minlength: 4
+         maxlength: 10
+         noSpace: true
+         passwordComplexity: true
+
+       confirmPassword:
+         required: true
+         equalTo: "#new_password"
+
+     messages:
+       login_name: 
+         required: "Login name cannot be blank!"
+         maxlength: "Login name is too long"
+         noSpace: "Login name cannot contain spaces"
+       password:
+         required: "Password cannot be blank!"
+         minlength: "Password field cannot be shorter than 4 characters"
+         maxlength: "Password field cannot be longer than 10 characters"
+         noSpace: "Password cannot contain spaces"
+       confirmPassword:
+         required: "Confirm password cannot be blank!"
+         equalTo: "Confirm password is not equal to Password"       
+   @
 
   duplicateUser: (event) ->
     event.preventDefault()
