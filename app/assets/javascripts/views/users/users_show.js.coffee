@@ -15,4 +15,4 @@ class Shop.Views.UsersShow extends Backbone.View
     @
 
   returnOnMain: ->
-    Backbone.history.navigate("/index", true)  
+    Backbone.history.navigate("", true)  

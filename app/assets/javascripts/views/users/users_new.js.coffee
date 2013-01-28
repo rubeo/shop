@@ -118,7 +118,7 @@ class Shop.Views.UsersNew extends Backbone.View
 
   returnOnMain: ->
     if confirm 'Are you sure you want to cancel operation. All data will be lost?'
-      Backbone.history.navigate("/index", true)
+      Backbone.history.navigate("", true)
 
   refreshFields: ->
     $(@el).find('#new_login_name').val('')

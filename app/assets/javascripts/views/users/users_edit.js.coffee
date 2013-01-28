@@ -62,6 +62,7 @@ class Shop.Views.UsersEdit extends Backbone.View
     @model.save attributes,
       wait: true
       error: @handleError
+    
 
   handleError: (user, response) ->
     if response.status == 422
@@ -71,7 +72,7 @@ class Shop.Views.UsersEdit extends Backbone.View
 
   returnOnMain: ->
     if confirm 'Are you sure you want to cancel operation. All data will be lost?'
-      Backbone.history.navigate("/index", true)
+      Backbone.history.navigate("", true)
 
   refreshFields: ->
     $(@el).find('#new_first_name').val(@model.attributes.first_name)

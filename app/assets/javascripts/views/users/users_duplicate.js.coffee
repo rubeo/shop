@@ -87,7 +87,7 @@ class Shop.Views.UsersDuplicate extends Backbone.View
         alert "#{attribute} #{message}" for message in messages
 
   returnOnMain: ->
-    Backbone.history.navigate("/index", true) if confirm 'Are you sure you want to cancel operation. All data will be lost?'
+    Backbone.history.navigate("", true) if confirm 'Are you sure you want to cancel operation. All data will be lost?'
       
 
   refreshFields: (e) ->
