@@ -31,7 +31,7 @@ class Shop.Views.UsersEdit extends Backbone.View
          maxlength: 50
          noNumbers: true
 
-       lastName: 
+       last_name: 
          required: true
          maxlength: 50
          noNumbers: true
@@ -45,7 +45,7 @@ class Shop.Views.UsersEdit extends Backbone.View
          required: "First name cannot be blank!"
          maxlength: "First name is too long"
          noNumbers: "First name cannot contain numbers"
-       lastName: 
+       last_name: 
          required: "Last name cannot be blank!"
          maxlength: "Last name is too long"
          noNumbers: "Last name cannot contain numbers"
@@ -55,7 +55,7 @@ class Shop.Views.UsersEdit extends Backbone.View
     event.preventDefault()
     attributes = 
       first_name: @$el.find('#new_first_name').val()
-      lastName: @$el.find('#new_lastName').val()
+      last_name: @$el.find('#new_lastName').val()
       email: @$el.find('#new_email').val()
       region: @$el.find('#region :selected').val()
       role: @$el.find('input:radio:checked').val()
@@ -76,7 +76,7 @@ class Shop.Views.UsersEdit extends Backbone.View
 
   refreshFields: ->
     $(@el).find('#new_first_name').val(@model.attributes.first_name)
-    $(@el).find('#new_lastName').val(@model.attributes.lastName)
+    $(@el).find('#new_lastName').val(@model.attributes.last_name)
     $(@el).find('#new_email').val(@model.attributes.email)
     $(@el).find('#region :selected').val(@model.attributes.region)
     $(@el).find('input:radio:checked').val(@model.attributes.role)

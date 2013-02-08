@@ -4,24 +4,25 @@
 <h2>Edit User</h2>  
 <h4>This page is appointed for editing existing user for particular role</h4>
 
-<div>
-  <label for="first_name">First Name</label>
-  <input type="text" name="first_name" id="new_first_name" value=<%= @user.get('first_name') %> >
+<div class="row-fluid">
+  <label for="first_name" class="span2">First Name</label>
+  <input type="text" name="first_name" id="new_first_name" class="span3" value=<%= @user.get('first_name') %> >
 </div>
 
-<div>
-  <label for="last_name">Last Name</label>
-  <input type="text" name="lastName" id="new_lastName" value=<%= @user.get('lastName') %> >
+
+<div class="row-fluid">
+  <label for="last_name" class="span2">Last Name</label>
+  <input type="text" name="last_name" id="new_lastName" class="span3" value=<%= @user.get('last_name') %> >
 </div>
 
-<div>
-  <label for="email">Email</label>
-  <input type="text" name="email" id="new_email" value=<%= @user.get('email') %> >
+<div class="row-fluid">
+  <label for="email" class="span2">Email</label>
+  <input type="text" name="email" id="new_email" class="span3" value=<%= @user.get('email') %> >
 </div>
 
-<div>
-  <label for="region">Region</label>
-  <select id="region">
+<div class="row-fluid">
+  <label for="region" class="span2">Region</label>
+  <select id="region" class="span3">
     <option selected value="South">South</option>
     <option value="North">North</option>
     <option value="West">West</option>
@@ -29,25 +30,15 @@
   </select>
 </div>
 
+
 <div class="panel">
-<h4>Role</h4>
-<input type="radio" name="role" value="Administrator" id="Administrator" /> 
-<label for="Administrator">Administrator</label><br/>
+    <h4>
+      Role
+    </h4><label class="radio"><input type="radio" name="role" id="Administrator" value="Administrator"> Administrator</label> <label class="radio"><input type="radio" name="role" id="Merchandiser" value="Merchandiser">Merchandiser</label> <label class="radio"><input type="radio" name="role" id="Supervisor" value="Supervisor"> Supervisor</label> <label class="radio"><input type="radio" name="role" id="Customer" value="Customer" checked> Customer</label>
+  </div>
+  <div class="paging-buttons">
+    <input type="submit" class="btn btn-success" value="Update"> <button id="cancel" class="btn btn-success">Cancel</button> <button id="refresh" class="btn btn-success">Refresh</button>
+  </div>
 
-<input type="radio" name="role" value="Merchandiser" id="Merchandiser" /> 
-<label for="Merchandiser">Merchandiser</label><br/>
-
-<input type="radio" name="role" value="Supervisor" id="Supervisor" /> 
-<label for="Supervisor">Supervisor</label><br/>
-
-<input type="radio" name="role" value="Customer" id="Customer" checked /> 
-<label for="Customer">Customer</label><br/>
-</div>
-
-<div class="paging-buttons">
-    <input type="submit" value="Update">
-    <button id="cancel">Cancel</button>
-    <button id="refresh">Refresh</button>
-</div>
 
 </form>

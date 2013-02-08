@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: 
+  quantity: 1
+  price_per_line: 9.99
+
+two:
+  item: 
+  quantity: 1
+  price_per_line: 9.99

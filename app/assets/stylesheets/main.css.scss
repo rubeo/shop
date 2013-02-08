@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-color: #4B7399;
+  /*background-color: #4B7399;*/
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -26,111 +26,15 @@ a {
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
+/*  border: solid 1px black;*/
   margin-top: 20px;
 }
 
 form input {
   font-size: 20px;
 }
-form input[type='text'], form input[type='password'] {
-  width: 535px;
-  float: left
-}
-
-form select {
-  font-size: 20px;
-  width: 535px;
-}
-
-form div {
-  clear: both;
-}
-
-form input[type='submit'], form div button, #user_create_button {
-  -webkit-appearance: caret;
-  font-size: 14px;
-  font-size: 13px;
-  padding: 5px 10px 6px 10px;
-  font-weight: bold;
-  border: 1px solid #466A98;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  color: #FFF;
-  background: #24882B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#32BE39), to(#247B28));
-  background: -moz-linear-gradient(top,  #32BE39,  #247B28);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32BE39', endColorstr='#247B28');
-  text-decoration: none;
-  text-shadow: 0 -1px 0 #036;
-  text-align: middle;
-  vertical-align: top;
-}
 
 
-#destroy {
-  -webkit-appearance: caret;
-  font-size: 14px;
-  font-size: 13px;
-  padding: 5px 10px 6px 10px;
-  font-weight: bold;
-  border: 1px solid #466A98;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  color: #FFF;
-  background: #24882B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#bd333f), to(#7a2424));
-  background: -moz-linear-gradient(top,  #bd333f,  #7a2424);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bd333f', endColorstr='#7a2424');
-  text-decoration: none;
-  text-shadow: 0 -1px 0 #036;
-  text-align: middle;
-  vertical-align: top;
-}
-
-#edit{
-  -webkit-appearance: caret;
-  font-size: 14px;
-  font-size: 13px;
-  padding: 5px 10px 6px 10px;
-  font-weight: bold;
-  border: 1px solid #466A98;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  color: #FFF;
-  background: #24882B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#333fbd), to(#2e2478));
-  background: -moz-linear-gradient(top,  #333fbd,  #2e2478);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333fbd', endColorstr='#2e2478');
-  text-decoration: none;
-  text-shadow: 0 -1px 0 #036;
-  text-align: middle;
-  vertical-align: top;
-}
-
-#duplicate {
-  -webkit-appearance: caret;
-  font-size: 14px;
-  font-size: 13px;
-  padding: 5px 10px 6px 10px;
-  font-weight: bold;
-  border: 1px solid #466A98;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  color: #FFF;
-  background: #24882B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#aa333f), to(#dd2424));
-  background: -moz-linear-gradient(top,  #aa333f,  #dd2424);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa333f', endColorstr='#dd2424');
-  text-decoration: none;
-  text-shadow: 0 -1px 0 #036;
-  text-align: middle;
-  vertical-align: top;
-}
 
 #draw {
   margin: 20px auto;
@@ -142,55 +46,14 @@ h1 {
   margin: 10px 0;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 10px;
-  border-top: solid 1px #CCC;
-}
-
-li {
-  border-bottom: solid 1px #CCC;
-  padding: 10px 10px;
-  font-size: 16px;
-  position: relative;
-  .winner {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: #999;
-    &.highlight {
-      color: #DD0000;
-      font-weight: bold;
-    }
-  }
-}
-
-table {
-  border-collapse: collapse;
-  border-bottom: 1px black solid;
-  width:100%;
-  margin-top: 15px;
-}
-
-th {
-  border: 1px black solid;
-  background-color: gray;
-}
-
-td {
-  border-left: 1px black solid;
-  border-right: 1px black solid;
-}
 
 .panel { 
   margin-top: 15px;
   margin-bottom: 5px;
-    padding: 5px;
-    border: solid 1px black; 
-    overflow: auto;  
-    height: 80px;
+  padding: 5px;
+  border: solid 1px gray;
+  border-radius : 10px;
+  overflow: auto;
 }
 
 .paging {
@@ -205,20 +68,14 @@ td {
 .panel h4 {
     background-color: white;
     display: block;
-    margin-top: -17px;
-    width: 70px;
+    margin-top: -20px;
+    width: 120px;
     position: absolute;
-}
-
-label {
-  display:block;
-  width:130px;
-  float:left;  
 }
 
 
 label.error { 
-  float: left; 
+  float: right; 
   color: red; 
   padding-left: .5em; 
   vertical-align: top; 
@@ -231,8 +88,14 @@ label.error {
    width: 80%
 }
 
-#paging-title {
-  float: left;
-  padding: 5px;
-  width: 20%
+ul.hmenu {
+  list-style: none; 
+  margin: 0 0 2em;
+  padding: 0;
+  float: right;
 }
+
+ul.hmenu li {
+  display: inline;  
+}
+

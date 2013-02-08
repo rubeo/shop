@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_number: MyString
+  total_price: 9.99
+  total_num_of_items: 1
+  max_discount: 9.99
+  delivery_date: 2013-02-05
+  status: MyString
+  user: 
+  role: MyString
+  date_of_ordering: 2013-02-05
+  pref_delivery_date: 2013-02-05
+  credit_card_type: MyString
+  credit_card_number: MyString
+  cvv2: MyString
+  expiry_date: 2013-02-05
+  start_date: 2013-02-05
+  issue_number: MyString
+  itemstable: 
+
+two:
+  order_number: MyString
+  total_price: 9.99
+  total_num_of_items: 1
+  max_discount: 9.99
+  delivery_date: 2013-02-05
+  status: MyString
+  user: 
+  role: MyString
+  date_of_ordering: 2013-02-05
+  pref_delivery_date: 2013-02-05
+  credit_card_type: MyString
+  credit_card_number: MyString
+  cvv2: MyString
+  expiry_date: 2013-02-05
+  start_date: 2013-02-05
+  issue_number: MyString
+  itemstable: 

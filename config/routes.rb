@@ -1,11 +1,18 @@
 Shop::Application.routes.draw do
   
+  devise_for  :users,
+              :skip => [:registrations, :confirmations]
+  
   scope "api" do
     resources :users
+    resources :itemstables
+    resources :items
+    resources :orders
   end
-  match "users/filter" => "users#filter"
   
   root to: "users#index"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

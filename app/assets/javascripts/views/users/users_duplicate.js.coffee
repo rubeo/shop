@@ -49,7 +49,7 @@ class Shop.Views.UsersDuplicate extends Backbone.View
          noSpace: true
          passwordComplexity: true
 
-       confirmPassword:
+       password_confirmation:
          required: true
          equalTo: "#new_password"
 
@@ -63,7 +63,7 @@ class Shop.Views.UsersDuplicate extends Backbone.View
          minlength: "Password field cannot be shorter than 4 characters"
          maxlength: "Password field cannot be longer than 10 characters"
          noSpace: "Password cannot contain spaces"
-       confirmPassword:
+       password_confirmation:
          required: "Confirm password cannot be blank!"
          equalTo: "Confirm password is not equal to Password"       
    @
@@ -73,7 +73,7 @@ class Shop.Views.UsersDuplicate extends Backbone.View
     attr = @attributes.attributes
     attr.login_name = $(@el).find('#new_login_name').val()
     attr.password = $(@el).find('#new_password').val()
-    attr.confirmPassword = $(@el).find('#new_confirmPassword').val()
+    attr.password_confirmation = $(@el).find('#new_confirmPassword').val()
     @collection.create attr,
       wait: true
       success: -> 
@@ -94,4 +94,4 @@ class Shop.Views.UsersDuplicate extends Backbone.View
     e.preventDefault()
     $(@el).find('#new_login_name').val(@attributes.attributes.login_name)
     $(@el).find('#new_password').val(@attributes.attributes.password)
-    $(@el).find('#new_confirmPassword').val(@attributes.attributes.confirmPassword)
+    $(@el).find('#new_confirmPassword').val(@attributes.attributes.password_confirmation)

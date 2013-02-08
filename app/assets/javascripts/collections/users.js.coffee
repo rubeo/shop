@@ -2,40 +2,83 @@ class Shop.Collections.Users extends Backbone.Collection
 
   baseUrl: '/api/users'
   model: Shop.Models.User
-  currentPage: 1
-  perPage: 10
-  pageInfo: {}
-  pageParam: "page"
+  sortStore: ""
+  
+  initialize: (options) =>
+    @init_pagination(options)
 
-  parse: (resp, xhr) ->
-    @setPageInfo(resp)
+  pageInfo: =>
+    info =
+      numPages: @numPages
+      currentPage: @currentPage
+      perPage: @perPage
+      numPages: @numPages
+      prev: false
+      next: false
+      orderBy: @orderBy
+      totalCount: @totalCount
+      fields: @fields
+      start_with: @start_with
+      request: @request
+        
+  parse: (resp) =>
+    @init_pagination(resp)
     resp["models"]
 
-  setPageInfo: (info) ->
-    _.extend(@pageInfo, {
-      currentPage:  Number(info["current_page"] or info["currentPage"]),
-      numPages:     Number(info["num_pages"]    or info["numPages"]),
-      perPage:      @perPage
-    })
-    @currentPage = @pageInfo['currentPage']
+  init_pagination: (options) =>
+    @currentPage = options['current_page']
+    @perPage = options['per_page']
+    @numPages = options['num_pages']
+    @totalCount = options['total_count']
+    @orderBy = "id asc"
+   
+  howManyPer: (newPerPage) =>
+    @currentPage = 1
+    @perPage = newPerPage
+    @fetch()
 
-  howManyPer: (perPage) ->
-    @pageInfo.currentPage = 1
-    @pageInfo.perPage = perPage
+  sortTableAsc: (ident) =># NEED refactor
+    @orderBy = "#{ident} asc"
+    @fetch()
+
+  sortTableDesc: (ident) =># NEED refactor
+    @orderBy = "#{ident} desc"
+    @fetch()
+
+  sortTableMulti: (ident) =># NEED refactor
+    @orderBy = "#{ident} asc"
+    if @sortStore is ""
+      @sortStore = @orderBy
+    else
+      @sortStore += ", " + @orderBy
+    @orderBy = @sortStore
+    @fetch()
+
     
-    
+  filterTable: (newField, newStartWith, newRequest) =>
+    @fields = newField
+    @start_with = newStartWith
+    @request = newRequest
+    @fetch()
+        
+  nextPage: =>
+    @currentPage = @currentPage + 1
+    return @fetch()
+ 
+  previousPage: =>
+    @currentPage = @currentPage - 1
+    return @fetch()
 
-  setPage: (page) ->
-    return unless page > 0
-    [oldPage, @currentPage] = [@currentPage, Number(page)]
-    @fetch() unless oldPage == @currentPage
+  gotoPage: (page) =>
+    @currentPage = page
+    return @fetch()
 
-  url: ->
-    @baseUrl + '?' + $.param({page: @currentPage})
+  url: =>
+    @baseUrl + '?' + $.param({orderBy: @orderBy, currentPage: @currentPage, perPage: @perPage, fields: @fields, scope: @start_with, request: @request})
 
   duplicateUser: (userId) ->
     curAttr = @get(userId).attributes
     dupl_user = new Shop.Models.User(curAttr)
     dupl_user.id = undefined
     dupl_user.attributes["id"] = undefined
-    dupl_user  
+    dupl_user   

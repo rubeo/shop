@@ -21,10 +21,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'backbone-on-rails'
-
 gem 'quiet_assets'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'kaminari'
+gem 'devise'
+gem 'has_scope'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
